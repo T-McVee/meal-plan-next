@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SideNav from "@/components/SideNav";
+import SideNav from "@/components/custom/SideNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={
-          "flex min-h-screen flex-col items-center justify-between p-24 bg-muted/40"
+          "flex min-h-screen flex-col items-center justify-between p-24 bg-muted/40 dark:bg-gray-900"
         }
       >
         <SideNav />
