@@ -19,16 +19,17 @@ import { Button } from "../ui/button";
 interface IProps {
   colDefs: any[];
   rowData: any[];
+  width?: string;
   title?: string;
   description?: string;
   children?: React.ReactNode;
 }
 
 function CardCustom(props: IProps) {
-  const { colDefs, rowData, title, description, children } = props;
+  const { colDefs, rowData, width, title, description, children } = props;
 
   return (
-    <Card className="w-3/5 drop-shadow-lg">
+    <Card className={`w-${width ? width : "3/5"} drop-shadow-lg`}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>

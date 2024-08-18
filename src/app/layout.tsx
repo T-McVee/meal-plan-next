@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SideNav from "@/components/custom/SideNav";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,15 @@ export default function RootLayout({
           "flex min-h-screen flex-col items-center justify-between p-24 bg-muted/40 dark:bg-gray-900"
         }
       >
-        <SideNav />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SideNav />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
